@@ -22,7 +22,7 @@ import youtube from './youtube.svg'
 import linkedin from './linkedin.svg'
 
 
-const POPULAR = [
+export const POPULAR = [
   {
     id:1,
     name:"Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
@@ -50,9 +50,8 @@ const POPULAR = [
   },
 ];
 
-export default POPULAR;
 
-const LATEST = [
+export const LATEST = [
   {
     id: 5,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
@@ -111,10 +110,8 @@ const LATEST = [
   },
 ];
 
-export default LATEST;
-
 // FOOTER SECTION
-const FOOTER_LINKS = [
+export const FOOTER_LINKS = [
   {
     title: "Learn More",
     links: [
@@ -136,9 +133,7 @@ const FOOTER_LINKS = [
   },
 ];
 
-export default FOOTER_LINKS;
-
-const FOOTER_CONTACT_INFO = {
+export const FOOTER_CONTACT_INFO = {
   title: "Contact Us",
   links: [
     { label: "Contact Number", value: "123-456-7890" },
@@ -157,4 +152,3 @@ export const SOCIALS = {
   ],
 };
 
-export default SOCIALS;
