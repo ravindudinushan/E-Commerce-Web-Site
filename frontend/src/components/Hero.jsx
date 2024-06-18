@@ -12,7 +12,7 @@ const Hero = () => {
           Reprehenderit, quibusdam! Voluptatum sed ab ipsa. 
           Molestias expedita sunt libero nisi pariatur sint ratione quas, 
           voluptatum doloremque recusandae, accusamus impedit quo? Autem. </p>
-        <div className='flexStart !items-center gap-x-4 my-10'>
+        <div className='flexStart !items-center gap-x-4 my-8'>
             <div className='!regular-24 flexCenter gap-x-3'>
               <FaStar/>
               <FaStar/>
