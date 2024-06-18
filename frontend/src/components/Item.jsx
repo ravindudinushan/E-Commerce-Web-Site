@@ -6,6 +6,13 @@ const Item = ({id, name, image, old_price, new_price}) => {
     <div>
       <div>
         <Link to={`product/${id}`}></Link>
+        <img src={image} alt="productImage" />
+      </div>
+      <div>
+        <h4>{name}</h4>
+        <div>
+            <div>{old_price}</div>
+        </div>
       </div>
     </div>
   )
