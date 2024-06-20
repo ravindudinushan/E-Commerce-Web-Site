@@ -14,7 +14,7 @@ const Product = () => {
   }
 
   return (
-    <section>
+    <section className='max_padd_container py-28'>
       <div>
         <ProductHd product={product}/>
         <ProductDisplay product={product}/>
