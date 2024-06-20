@@ -13,7 +13,7 @@ const {product} = props;
     <section>
         <div className='flex flex-col gap-14 xl:flex-row'>
             {/* left side */}
-            <div className='flex gap-x-2'>
+            <div className='flex gap-x-2 xl:flex-1'>
                 <div className='flex flex-col gap-[7px] flex-wrap'>
                     <img src={product_rt_1} alt="prdctImg" className='max-h-[99px]'/>
                     <img src={product_rt_2} alt="prdctImg" className='max-h-[99px]'/>
@@ -25,7 +25,7 @@ const {product} = props;
                 </div>
             </div>
             {/* right side */}
-            <div className='flex-col flex'>
+            <div className='flex-col flex xl:flex-[1.7]'>
                 <h3 className='h3'>{product.name}</h3>
                 <div className='flex gap-x-2 text-secondary medium-22'>
                     <MdStar/>
