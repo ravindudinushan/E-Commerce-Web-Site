@@ -7,7 +7,7 @@ const CartItems = () => {
 const {all_products, cartItems, removeFromCart} = useContext(ShopContext);
 
   return (
-    <section className='max_padd-container pt-28'>
+    <section className='max_padd_container pt-28'>
         <table className='w-full mx-auto'>
             <thead>
                 <tr className='bg-slate-900/10 regular-18 sm:regular-22 text-start py-12'>
@@ -38,31 +38,31 @@ const {all_products, cartItems, removeFromCart} = useContext(ShopContext);
             </tbody>
         </table>
         {/* cart details */}
-        <div>
-            <div>
-                <h4>Summary</h4>
+        <div className='flex flex-col gap-20 my-16 p-8 md:flex-row rounded-md bg-white w-full max-w-[666px]'>
+            <div className='flex flex-col gap-10'>
+                <h4 className='bold-20'>Summary</h4>
                 <div>
-                    <div>
-                        <h4>Subtotal:</h4>
-                        <h4>${0}</h4>
+                    <div className='flexBetween py-4'>
+                        <h4 className='medium-16'>Subtotal:</h4>
+                        <h4 className='text-gray-30 font-semibold'>${0}</h4>
                     </div>
                     <hr />
-                    <div>
-                        <h4>Shipping Fee:</h4>
-                        <h4>Free</h4>
+                    <div className='flexBetween py-4'>
+                        <h4 className='medium-16'>Shipping Fee:</h4>
+                        <h4 className='text-gray-30 font-semibold'>Free</h4>
                     </div>
                     <hr />
-                    <div>
-                        <h4>Total:</h4>
-                        <h4>${0}</h4>
+                    <div className='flexBetween py-4'>
+                        <h4 className='bold-18'>Total:</h4>
+                        <h4 className='bold-18'>${0}</h4>
                     </div>
                 </div>
-                <button>Checkout</button>
-                <div>
-                    <h4>Your coupon code enter here:</h4>
-                    <div>
-                        <input type="text" placeholder='Coupon code' />
-                        <button>Submit</button>
+                <button className='btn_dark_rounded w-44'>Checkout</button>
+                <div className='flex flex-col gap-10'>
+                    <h4 className='bold-20 capitalize'>Your coupon code enter here:</h4>
+                    <div className='flexBetween pl-5 h-12 bg-primary rounded-full ring-1 ring-slate-900/10'>
+                        <input type="text" placeholder='Coupon code' className='bg-transparent border-none outline-none'/>
+                        <button className='btn_dark_rounded'>Submit</button>
                     </div>
                 </div>
             </div>
