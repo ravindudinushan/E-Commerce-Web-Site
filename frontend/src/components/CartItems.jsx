@@ -37,6 +37,36 @@ const {all_products, cartItems, removeFromCart} = useContext(ShopContext);
                 })}
             </tbody>
         </table>
+        {/* cart details */}
+        <div>
+            <div>
+                <h4>Summary</h4>
+                <div>
+                    <div>
+                        <h4>Subtotal:</h4>
+                        <h4>${0}</h4>
+                    </div>
+                    <hr />
+                    <div>
+                        <h4>Shipping Fee:</h4>
+                        <h4>Free</h4>
+                    </div>
+                    <hr />
+                    <div>
+                        <h4>Total:</h4>
+                        <h4>${0}</h4>
+                    </div>
+                </div>
+                <button>Checkout</button>
+                <div>
+                    <h4>Your coupon code enter here:</h4>
+                    <div>
+                        <input type="text" placeholder='Coupon code' />
+                        <button>Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
   )
 }
