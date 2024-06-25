@@ -73,6 +73,8 @@ const Product = mongoose.model("Product", {
     },
 })
 
+// Creating api for add product
+
 app.post('/addproduct', async(req, res) => {
     let products = await Product.find({});
     let id;
@@ -85,7 +87,7 @@ app.post('/addproduct', async(req, res) => {
     }
 
     const product = new Product({
-        id: req.body.id,
+        id: id,
         name: req.body.name,
         image: req.body.image,
         category: req.body.category,
@@ -99,6 +101,23 @@ app.post('/addproduct', async(req, res) => {
         success: true,
         name: req.body.name,
     })
+})
+
+// Creating api for remove product
+app.post('/removeproduct', async(req, res) => {
+    await Product.findOneAndDelete({id:req.body.id});
+    console.log("Removed");
+    res.json({
+        success: true,
+        name: req.body.name,
+    })
+})
+
+// Creating api for getAll product
+app.get('/allproducts', async(req, res) => {
+    let products = await Product.find({});
+    console.log("All Products Fetched");
+    res.send(products);
 })
 
 app.listen(port, (error) => {
