@@ -38,7 +38,7 @@ app.post("/upload", upload.single('product'), (req, res) => {
 })
 
 //schema for creating product
-const product = mongoose.model("Product", {
+const Product = mongoose.model("Product", {
     id: {
         type: Number,
         required: true,
