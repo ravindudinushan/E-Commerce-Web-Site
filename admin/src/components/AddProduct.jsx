@@ -1,4 +1,5 @@
 import React from 'react'
+import upload_area from '../assets/upload_area.svg'
 
 const AddProduct = () => {
   return (
@@ -25,7 +26,7 @@ const AddProduct = () => {
       </div>
       <div>
         <label htmlFor="file-input">
-            <img src="" alt="" />
+            <img src={upload_area} alt="" />
         </label>
       </div>
     </div>
