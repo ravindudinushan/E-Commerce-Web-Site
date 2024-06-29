@@ -23,6 +23,19 @@ const AddProduct = () => {
 
   const Add_Product = async () => {
     console.log(productDetails);
+    let responseData;
+    let product = productDetails;
+
+    let formData = new FormData();
+    formData.append('product', image);
+
+    await fetch('http://localhost:4000/upload', {
+      method: 'post',
+      headers: {
+        Accept: 'application/json',
+      },
+      body: formData,
+    }).then((resp) => resp.json()).then((data) => {responseData = data})
   }
 
   return (
