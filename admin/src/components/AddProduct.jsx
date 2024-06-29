@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import upload_area from '../assets/upload_area.svg'
+import {MdAdd} from 'react-icons/md' 
 
 const AddProduct = () => {
+
+  const [image, setImage] = useState(false);
+  const imageHandler = (e) => {
+      setImage(e.target.files[0])
+  }
+
   return (
     <div className='p-8 box-border bg-white w-full rounded-sm mt-4 lg:m-7'>
       <div className='mb-3'>
@@ -26,10 +33,11 @@ const AddProduct = () => {
       </div>
       <div>
         <label htmlFor="file-input">
-            <img src={upload_area} alt="" className='w-20 rounded-sm inline-block'/>
+            <img src={image?URL.createObjectURL(image):upload_area} alt="" className='w-20 rounded-sm inline-block'/>
         </label>
-        <input type="file" name='image' id='file-input' hidden className='bg-primary max-w-80 w-full py-3 px-4'/>
+        <input onChange={imageHandler} type="file" name='image' id='file-input' hidden className='bg-primary max-w-80 w-full py-3 px-4'/>
       </div>
+      <button className='btn_dark_rounded mt-4 flexCenter gap-x-1'><MdAdd/>Add Product</button>
     </div>
   )
 }
