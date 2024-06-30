@@ -36,12 +36,27 @@ const AddProduct = () => {
       },
       body: formData,
     }).then((resp) => resp.json()).then((data) => {responseData = data})
+
+    if(responseData.success){
+      product.image = responseData.image_url;
+      console.log(product);
+      await fetch('http://localhost:4000/addproduct', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(product),
+      }).then((resp) => resp.json()).then((data) =>{
+          data.success ? alert("Product Added") : alert("Upload Failed")
+      })
+    }
   }
 
   return (
     <div className='p-8 box-border bg-white w-full rounded-sm mt-4 lg:m-7'>
       <div className='mb-3'>
-        <h4 className='bold-18 pb-2'>Product title:</h4>
+        <h4 className='bold-18 pb-2'>Product Title:</h4>
         <input value={productDetails.name} onChange={changeHandler} type="text" name='name' placeholder='Type here..' className='bg-primary outline-none max-w-80 w-full py-3 px-4 rounded-md'/>
       </div>
       <div>
