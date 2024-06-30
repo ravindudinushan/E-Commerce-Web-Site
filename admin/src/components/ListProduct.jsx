@@ -24,6 +24,7 @@ const ListProduct = () => {
       },
       body:JSON.stringify({id:id})
     })
+    await fetchInfo();
   }
 
   return (
@@ -51,7 +52,7 @@ const ListProduct = () => {
                 <td>${product.old_price}</td>
                 <td>${product.new_price}</td>
                 <td>{product.category}</td>
-                <td><div className='bold-22 pl-6 sm:pl-14'><TbTrash/></div></td>
+                <td><div className='bold-22 pl-6 sm:pl-14'><TbTrash onClick={() => remove_product(product.id)}/></div></td>
               </tr>
             ))}
           </tbody>
