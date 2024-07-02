@@ -134,7 +134,6 @@ const User = mongoose.model('User', {
     },
     carData: {
         type: Object,
-        required: true,
     },
     date: {
         type: Date,
@@ -146,7 +145,7 @@ const User = mongoose.model('User', {
 app.post('/signup', async(req, res) => {
     let check = await User.findOne({email: req.body.email});
     if(check){
-        return res.status(400).json({success: false, errors: "Existing user found with same email address"})
+        return res.status(400).json({success: false, errors: "Existing user found with same email address"});
     }
     let cart = {};
     for (let i = 0; i < 300; i++) {
@@ -167,6 +166,27 @@ app.post('/signup', async(req, res) => {
     }
     const token = jwt.sign(data, 'secret_ecom');
     res.json({success: true, token})
+})
+
+//Creating endpoin for user login
+app.post('/login', async(req, res) => {
+    let user = await User.findOne({email: req.body.email});
+    if(user){
+        const passMatch = req.body.password === user.password;
+        if(passMatch){
+            const data = {
+                user: {
+                    id: user.id
+                }
+            }
+            const token = jwt.sign(data, 'secret_ecom');
+            res.json({success: true, token})
+        }else{
+            res.json({success: false, errors: "Wrong Password"})
+        }
+    }else{
+        res.json({success: false, errors: "Wrong Email"}) 
+    }
 })
 
 app.listen(port, (error) => {
