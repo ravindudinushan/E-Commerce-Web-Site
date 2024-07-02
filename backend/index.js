@@ -150,8 +150,7 @@ app.post('/signup', async(req, res) => {
     }
     let cart = {};
     for (let i = 0; i < 300; i++) {
-        cart[i] = 0;
-        
+        cart[i] = 0;   
     }
     const user = new User({
         name: req.body.username,
@@ -166,6 +165,8 @@ app.post('/signup', async(req, res) => {
             id: user.id
         }
     }
+    const token = jwt.sign(data, 'secret_ecom');
+    res.json({success: true, token})
 })
 
 app.listen(port, (error) => {
