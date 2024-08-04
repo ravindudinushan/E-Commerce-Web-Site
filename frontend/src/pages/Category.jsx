@@ -1,8 +1,11 @@
-import React from 'react'
-import all_products from '../assets/all_products'
+import React, { useContext } from 'react'
 import Item from '../components/Item'
+import { ShopContext } from '../context/ShopContext';
 
 const Category = ({category, banner}) => {
+
+  const {all_products} = useContext(ShopContext);
+
   return (
     <section className='max_padd_container py-12 xl:py-28'>
       <div>
