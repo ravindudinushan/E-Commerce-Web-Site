@@ -4,12 +4,18 @@ const Login = () => {
 
   const [ state, setState ] = useState("Login");
 
-  const login = async () => {
+  const [ formData, setFormData ] = useState({
+    username:"",
+    password:"",
+    email:""
+  });
 
+  const login = async () => {
+    console.log("Login function execute")
   }
 
   const signup = async () => {
-
+    console.log("Signup function execute")
   }
 
   return (
