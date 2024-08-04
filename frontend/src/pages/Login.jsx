@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Login = () => {
+
+  const [ state, setState ] = useState("Login");
+
   return (
     <section className='max_padd_container flexCenter flex-col pt-32'>
       <div className='max-w-[555px] h-[600px] bg-white m-auto px-14 py-10'>
-        <h3 className='h3'>Sign Up</h3>
+        <h3 className='h3'>{state}</h3>
         <div className='flex flex-col gap-4 mt-7'>
           <input type="text" placeholder='Your Name' className='h-14 w-full pl-5 bg-slate-900/5 outline-none rounded-xl'/>
           <input type="email" placeholder='Email Address' className='h-14 w-full pl-5 bg-slate-900/5 outline-none rounded-xl'/>
