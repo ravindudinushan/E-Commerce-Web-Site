@@ -26,7 +26,7 @@ useEffect(() => {
                 'Content-Type': 'application/json',
             },
             body: "",
-            body:JSON.stringify({"itemId": itemId}),
+            // body:JSON.stringify({"itemId": itemId}),
         }).then((response) => response.json()).then((data) => setCartItems(data));
     }
 }, [])
