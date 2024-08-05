@@ -14,43 +14,99 @@ const Login = () => {
     setFormData({...formData,[e.target.name]:e.target.value});
   }
 
+  // const login = async () => {
+  //   console.log("Login function execute", formData)
+  //   let responseData;
+  //   await fetch('http://localhost:4000/login', {
+  //     method: "POST",
+  //     Headers: {
+  //       Accept: 'aplication/formData',
+  //       'content-Type': 'aplication/json'
+  //     },
+  //     body: JSON.stringify(formData)
+  //   }).then((response) => response.json()).then((data) => responseData=data)
+  //   if(responseData.success){
+  //     localStorage.setItem('auth-token', responseData.token);
+  //     window.location.replace('/');
+  //   }else{
+  //     alert(responseData.errors)
+  //   }
+  // }
+
   const login = async () => {
-    console.log("Login function execute", formData)
+    console.log("Login function executed", formData);
     let responseData;
+
     await fetch('http://localhost:4000/login', {
-      method: "POST",
-      Headers: {
-        Accept: 'aplication/formData',
-        'content-Type': 'aplication/json'
-      },
-      body: JSON.stringify(formData)
-    }).then((response) => response.json()).then((data) => responseData=data)
-    if(responseData.success){
-      localStorage.setItem('auth-token', responseData.token);
-      window.location.replace('/');
-    }else{
-      alert(responseData.errors)
+        method: "POST",
+        headers: { // Corrected headers
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then((response) => response.json())
+    .then((data) => responseData = data)
+    .catch((error) => {
+        console.error("Error during login fetch:", error);
+        alert("An error occurred during login. Please try again.");
+    });
+
+    if (responseData && responseData.success) {
+        localStorage.setItem('auth-token', responseData.token);
+        window.location.replace('/');
+    } else if (responseData) {
+        alert(responseData.errors);
     }
-  }
+};
+
+
+  // const signup = async () => {
+  //   console.log("Signup function execute", formData)
+  //   let responseData;
+  //   await fetch('http://localhost:4000/signup', {
+  //     method: "POST",
+  //     Headers: {
+  //       Accept: 'aplication/formData',
+  //       'content-Type': 'aplication/json'
+  //     },
+  //     body: JSON.stringify(formData)
+  //   }).then((response) => response.json()).then((data) => responseData=data)
+  //   if(responseData.success){
+  //     localStorage.setItem('auth-token', responseData.token);
+  //     window.location.replace('/');
+  //   }else{
+  //     alert(responseData.errors)
+  //   }
+  // }
 
   const signup = async () => {
-    console.log("Signup function execute", formData)
+    console.log("Signup function executed", formData);
     let responseData;
+
     await fetch('http://localhost:4000/signup', {
-      method: "POST",
-      Headers: {
-        Accept: 'aplication/formData',
-        'content-Type': 'aplication/json'
-      },
-      body: JSON.stringify(formData)
-    }).then((response) => response.json()).then((data) => responseData=data)
-    if(responseData.success){
-      localStorage.setItem('auth-token', responseData.token);
-      window.location.replace('/');
-    }else{
-      alert(responseData.errors)
+        method: "POST",
+        headers: { // Corrected headers
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then((response) => response.json())
+    .then((data) => responseData = data)
+    .catch((error) => {
+        console.error("Error during signup fetch:", error);
+        alert("An error occurred during signup. Please try again.");
+    });
+
+    if (responseData && responseData.success) {
+        localStorage.setItem('auth-token', responseData.token);
+        window.location.replace('/');
+    } else if (responseData) {
+        alert(responseData.errors);
     }
-  }
+};
+
 
   return (
     <section className='max_padd_container flexCenter flex-col pt-32'>

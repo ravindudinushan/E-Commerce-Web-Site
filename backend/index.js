@@ -141,32 +141,77 @@ const User = mongoose.model('User', {
     },
 })
 
-//Creating endpoin for registering the user
-app.post('/signup', async(req, res) => {
-    let check = await User.findOne({email: req.body.email});
-    if(check){
-        return res.status(400).json({success: false, errors: "Existing user found with same email address"});
-    }
-    let cart = {};
-    for (let i = 0; i < 300; i++) {
-        cart[i] = 0;   
-    }
-    const user = new User({
-        name: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
-        cartData: cart,
-    })
-    await user.save();
+// //Creating endpoin for registering the user
+// app.post('/signup', async(req, res) => {
+//     let check = await User.findOne({email: req.body.email});
+//     if(check){
+//         return res.status(400).json({success: false, errors: "Existing user found with same email address"});
+//     }
+//     let cart = {};
+//     for (let i = 0; i < 300; i++) {
+//         cart[i] = 0;   
+//     }
+//     const user = new User({
+//         name: req.body.username,
+//         email: req.body.email,
+//         password: req.body.password,
+//         cartData: cart,
+//     })
+//     await user.save();
 
-    const data = {
-        user: {
-            id: user.id
+//     const data = {
+//         user: {
+//             id: user.id
+//         }
+//     }
+//     const token = jwt.sign(data, 'secret_ecom');
+//     res.json({success: true, token})
+// })
+
+// Creating endpoint for registering the user
+app.post('/signup', async (req, res) => {
+    try {
+        // Validate request data
+        const { username, email, password } = req.body;
+        if (!username || !email || !password) {
+            return res.status(400).json({ success: false, errors: "Please provide all required fields: username, email, and password" });
         }
+
+        // Check if the user already exists
+        let check = await User.findOne({ email: req.body.email });
+        if (check) {
+            return res.status(400).json({ success: false, errors: "Existing user found with the same email address" });
+        }
+
+        // Initialize cart
+        let cart = {};
+        for (let i = 0; i < 300; i++) {
+            cart[i] = 0;
+        }
+
+        // Create new user
+        const user = new User({
+            name: req.body.username,
+            email: req.body.email,
+            password: req.body.password,
+            cartData: cart,
+        });
+        await user.save();
+
+        // Create JWT token
+        const data = {
+            user: {
+                id: user.id,
+            },
+        };
+        const token = jwt.sign(data, 'secret_ecom');
+        res.json({ success: true, token });
+    } catch (error) {
+        console.error("Error during user signup:", error);
+        res.status(500).json({ success: false, errors: "Internal Server Error" });
     }
-    const token = jwt.sign(data, 'secret_ecom');
-    res.json({success: true, token})
-})
+});
+
 
 //Creating endpoin for user login
 app.post('/login', async(req, res) => {
