@@ -132,7 +132,7 @@ const User = mongoose.model('User', {
     password: {
         type: String,
     },
-    carData: {
+    cartData: {
         type: Object,
     },
     date: {
@@ -203,6 +203,11 @@ app.get('/popularproducts', async(req, res) => {
     let popularproducts = products.slice(0, 4);
     console.log("Popular products fetched")
     res.send(popularproducts);
+})
+
+//creating end point for adding products in cart data
+app.post('/addtocart', async (req, res) => {
+    console.log(req.body);
 })
 
 app.listen(port, (error) => {
