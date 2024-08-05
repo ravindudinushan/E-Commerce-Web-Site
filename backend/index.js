@@ -205,9 +205,28 @@ app.get('/popularproducts', async(req, res) => {
     res.send(popularproducts);
 })
 
+//creating middlewear to fetch user
+const fetchUser = async (req, res, next) => {
+    const token = req.header('auth-token');
+    if(!token){
+        res.status(401).send({errors: "Plese authenticate using valid login"})
+    }else{
+        try{
+            const data = jwt.verify(token, 'secret_ecom');
+            req.user = data.user;
+            next();
+        }catch(error){
+            res.status(401).send({errors: "Plese authenticate using a valid token"})
+        }
+    }
+}
+
 //creating end point for adding products in cart data
-app.post('/addtocart', async (req, res) => {
-    console.log(req.body);
+app.post('/addtocart', fetchUser, async (req, res) => {
+    let userData = await User.findOne({_id: req.user.id})
+    userData.cartData[req.body.itemId] += 1;
+    await User.findOneAndUpdate({_id: req.user.id}, {cartData: userData.cartData});
+    res.send("Added");
 })
 
 app.listen(port, (error) => {
