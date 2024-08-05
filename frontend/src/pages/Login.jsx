@@ -14,25 +14,6 @@ const Login = () => {
     setFormData({...formData,[e.target.name]:e.target.value});
   }
 
-  // const login = async () => {
-  //   console.log("Login function execute", formData)
-  //   let responseData;
-  //   await fetch('http://localhost:4000/login', {
-  //     method: "POST",
-  //     Headers: {
-  //       Accept: 'aplication/formData',
-  //       'content-Type': 'aplication/json'
-  //     },
-  //     body: JSON.stringify(formData)
-  //   }).then((response) => response.json()).then((data) => responseData=data)
-  //   if(responseData.success){
-  //     localStorage.setItem('auth-token', responseData.token);
-  //     window.location.replace('/');
-  //   }else{
-  //     alert(responseData.errors)
-  //   }
-  // }
-
   const login = async () => {
     console.log("Login function executed", formData);
     let responseData;
@@ -59,26 +40,6 @@ const Login = () => {
         alert(responseData.errors);
     }
 };
-
-
-  // const signup = async () => {
-  //   console.log("Signup function execute", formData)
-  //   let responseData;
-  //   await fetch('http://localhost:4000/signup', {
-  //     method: "POST",
-  //     Headers: {
-  //       Accept: 'aplication/formData',
-  //       'content-Type': 'aplication/json'
-  //     },
-  //     body: JSON.stringify(formData)
-  //   }).then((response) => response.json()).then((data) => responseData=data)
-  //   if(responseData.success){
-  //     localStorage.setItem('auth-token', responseData.token);
-  //     window.location.replace('/');
-  //   }else{
-  //     alert(responseData.errors)
-  //   }
-  // }
 
   const signup = async () => {
     console.log("Signup function executed", formData);

@@ -141,33 +141,6 @@ const User = mongoose.model('User', {
     },
 })
 
-// //Creating endpoin for registering the user
-// app.post('/signup', async(req, res) => {
-//     let check = await User.findOne({email: req.body.email});
-//     if(check){
-//         return res.status(400).json({success: false, errors: "Existing user found with same email address"});
-//     }
-//     let cart = {};
-//     for (let i = 0; i < 300; i++) {
-//         cart[i] = 0;   
-//     }
-//     const user = new User({
-//         name: req.body.username,
-//         email: req.body.email,
-//         password: req.body.password,
-//         cartData: cart,
-//     })
-//     await user.save();
-
-//     const data = {
-//         user: {
-//             id: user.id
-//         }
-//     }
-//     const token = jwt.sign(data, 'secret_ecom');
-//     res.json({success: true, token})
-// })
-
 // Creating endpoint for registering the user
 app.post('/signup', async (req, res) => {
     try {
@@ -227,10 +200,10 @@ app.post('/login', async(req, res) => {
             const token = jwt.sign(data, 'secret_ecom');
             res.json({success: true, token})
         }else{
-            res.json({success: false, errors: "Wrong Password"})
+            res.json({success: false, errors: "Wrong Password..!"})
         }
     }else{
-        res.json({success: false, errors: "Wrong Email"}) 
+        res.json({success: false, errors: "Wrong Email Address..!"}) 
     }
 })
 
@@ -265,15 +238,6 @@ const fetchUser = async (req, res, next) => {
         }
     }
 }
-
-//creating end point for adding products in cart data
-// app.post('/addtocart', fetchUser, async (req, res) => {
-//     console.log("Added", req.body.itemId)
-//     let userData = await User.findOne({_id: req.user.id})
-//     userData.cartData[req.body.itemId] += 1;
-//     await User.findOneAndUpdate({_id: req.user.id}, {cartData: userData.cartData});
-//     res.send("Added");
-// })
 
 // creating endpoint for adding products in cart data
 app.post('/addtocart', fetchUser, async (req, res) => {
