@@ -222,13 +222,44 @@ const fetchUser = async (req, res, next) => {
 }
 
 //creating end point for adding products in cart data
+// app.post('/addtocart', fetchUser, async (req, res) => {
+//     console.log("Added", req.body.itemId)
+//     let userData = await User.findOne({_id: req.user.id})
+//     userData.cartData[req.body.itemId] += 1;
+//     await User.findOneAndUpdate({_id: req.user.id}, {cartData: userData.cartData});
+//     res.send("Added");
+// })
+
+// creating endpoint for adding products in cart data
 app.post('/addtocart', fetchUser, async (req, res) => {
-    console.log("Added", req.body.itemId)
-    let userData = await User.findOne({_id: req.user.id})
-    userData.cartData[req.body.itemId] += 1;
-    await User.findOneAndUpdate({_id: req.user.id}, {cartData: userData.cartData});
-    res.send("Added");
-})
+    console.log("Added", req.body.itemId);
+    
+    try {
+        let userData = await User.findOne({_id: req.user.id});
+        
+        // Ensure cartData is initialized
+        if (!userData.cartData) {
+            userData.cartData = {};
+        }
+
+        // Check if the itemId exists in cartData, if not initialize it
+        if (!userData.cartData[req.body.itemId]) {
+            userData.cartData[req.body.itemId] = 0;
+        }
+
+        // Increment the cartData count for the itemId
+        userData.cartData[req.body.itemId] += 1;
+
+        // Update the user document
+        await User.findOneAndUpdate({_id: req.user.id}, {cartData: userData.cartData});
+        
+        res.send("Added");
+    } catch (error) {
+        console.error("Error adding to cart:", error);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
 
 //creating end point for removing cart data
 app.post('/removefromcart', fetchUser, async (req, res) => {
