@@ -22,7 +22,7 @@
 Home
 <img width="1394" alt="Screenshot 2024-03-04 at 18 59 14" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 221519.png">
 <img width="1394" alt="Screenshot 2024-03-04 at 18 59 14" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 221552.png">
-<img width="1394" alt="Screenshot 2024-03-04 at 18 59 14" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 221615.png">//
+<img width="1394" alt="Screenshot 2024-03-04 at 18 59 14" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 221615.png">
 <img width="1394" alt="Screenshot 2024-03-04 at 18 59 14" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 221519.png">
 
 About Us
