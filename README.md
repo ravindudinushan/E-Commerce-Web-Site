@@ -20,10 +20,10 @@
 
 # Preview
 Sign Up
-<img width="1394" alt="Screenshot 2024-03-04 at 18 59 14" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 221519.png">
+<img width="1394" alt="Screenshot 2024-03-04 at 18 59 14" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 221937.png">
 
 Login
-<img width="1394" alt="Screenshot 2024-03-04 at 18 59 14" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 221519.png">
+<img width="1394" alt="Screenshot 2024-03-04 at 18 59 14" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 221918.png">
 
 Home
 <img width="1394" alt="Screenshot 2024-03-04 at 18 59 14" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 221519.png">
