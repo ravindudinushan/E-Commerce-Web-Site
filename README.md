@@ -26,15 +26,16 @@ Home
 <img width="1394" alt="Screenshot 2024-03-04 at 18 59 14" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 221705.png">
 <img width="1394" alt="Screenshot 2024-03-04 at 18 59 14" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 221843.png">
 
-About Us
-<img width="1394" alt="Screenshot 2024-03-04 at 19 12 07" src="front-end/src/lk/ijse/helloShoe/assets/HelloShoe/Screenshot 2024-09-01 224143.png">
+Men's Page
+<img width="1394" alt="Screenshot 2024-03-04 at 19 12 07" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 222135.png">
+<img width="1394" alt="Screenshot 2024-03-04 at 19 12 07" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 222206.png">
 
-Contact Us
-<img width="1394" alt="Screenshot 2024-03-04 at 19 12 18" src="front-end/src/lk/ijse/helloShoe/assets/HelloShoe/Screenshot 2024-09-01 224205.png">
-<img width="1394" alt="Screenshot 2024-03-04 at 19 12 18" src="front-end/src/lk/ijse/helloShoe/assets/HelloShoe/Screenshot 2024-09-01 224237.png">
+Women's Page
+<img width="1394" alt="Screenshot 2024-03-04 at 19 12 18" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 222223.png">
+<img width="1394" alt="Screenshot 2024-03-04 at 19 12 18" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 222245.png">
 
-Footer
-<img width="1394" alt="Screenshot 2024-03-04 at 19 14 10" src="front-end/src/lk/ijse/helloShoe/assets/HelloShoe/Screenshot 2024-09-01 224246.png">
+Kid's Page
+<img width="1394" alt="Screenshot 2024-03-04 at 19 14 10" src="frontend/src/assets/E-Commerce/Screenshot 2024-09-01 221843.png">
 
 SignUp & Login
 <img width="1394" alt="Screenshot 2024-03-04 at 19 12 29" src="front-end/src/lk/ijse/helloShoe/assets/HelloShoe/Screenshot 2024-09-01 224300.png">
