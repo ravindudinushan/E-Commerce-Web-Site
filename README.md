@@ -4,18 +4,11 @@
 
 # 👨🏻‍💻 Technology & Frameworks
 <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JS</li>
-        <li>jQuery</li>
-        <li>Ajax</li>
-        <li>JSON</li>
-        <li>Java</li>
-        <li>Spring Boot</li>
-        <li>Spring Data JPA</li>
-        <li>Spring Security</li>
+        <li>MongoDB</li>
+        <li>Express.js</li>
+        <li>React.js</li>
+        <li>Node.js</li>
         <li>JWT Tokens</li>
-        <li>MySQL</li>
 </ul>
 
 # Preview
