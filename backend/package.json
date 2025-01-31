@@ -5,9 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Ravindu Dinushan",
   "license": "ISC",
-  "description": "",
+  "description": "Ecommerce website",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
